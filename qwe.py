@@ -1,13 +1,3 @@
-import multiprocessing
-
-
-def process_file(file_path, result_queue):
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            lines_count = sum(1 for line in f)
-        result_queue.put(f"{file_path}: {lines_count} lines")
-    except FileNotFoundError:
-        result_queue.put(f"{file_path}: File not found")
 
 
 def main():
